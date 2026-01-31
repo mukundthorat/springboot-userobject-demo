@@ -35,9 +35,9 @@ public class UserService {
         existingUser.setPassword(userPayLoad.getPassword());
         existingUser.setPhoneNumber(userPayLoad.getPhoneNumber());
 
-        existingUser.setRole(userPayLoad.getRole());    //ENUM
+        existingUser.setRole(userPayLoad.getRole());
 
-        existingUser.setStatus(userPayLoad.getStatus());    //ENUM
+        existingUser.setStatus(userPayLoad.getStatus());
         //now save updated entity
         return userRepository.save(existingUser);
     }

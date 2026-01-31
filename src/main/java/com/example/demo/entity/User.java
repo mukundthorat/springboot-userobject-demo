@@ -17,9 +17,7 @@ public class User {
     private String lastName;
     private String phoneNumber;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
 
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    private String role;
+    private String status;
 }
