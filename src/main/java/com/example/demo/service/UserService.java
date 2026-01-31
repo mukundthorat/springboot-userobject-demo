@@ -33,8 +33,10 @@ public class UserService {
         existingUser.setFirstName(userPayLoad.getFirstName());
         existingUser.setLastName(userPayLoad.getLastName());
         existingUser.setPhoneNumber(userPayLoad.getPhoneNumber());
-        existingUser.setRole(userPayLoad.getRole());
-        existingUser.setStatus(userPayLoad.getStatus());
+
+        existingUser.setRole(userPayLoad.getRole());    //ENUM
+
+        existingUser.setStatus(userPayLoad.getStatus());    //ENUM
         //now save updated entity
         return userRepository.save(existingUser);
     }

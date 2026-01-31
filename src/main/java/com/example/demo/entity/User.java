@@ -16,6 +16,10 @@ public class User {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    private String role;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }
