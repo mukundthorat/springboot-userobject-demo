@@ -3,6 +3,10 @@ import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -32,7 +36,11 @@ public class UserService {
         existingUser.setEmail(userPayLoad.getEmail());
         existingUser.setFirstName(userPayLoad.getFirstName());
         existingUser.setLastName(userPayLoad.getLastName());
-        existingUser.setPassword(userPayLoad.getPassword());
+
+        if(userPayLoad.getPassword() !=null && !userPayLoad.getPassword().isBlank()){
+            existingUser.setPassword(userPayLoad.getPassword());
+        }
+
         existingUser.setPhoneNumber(userPayLoad.getPhoneNumber());
 
         existingUser.setRole(userPayLoad.getRole());
@@ -48,5 +56,14 @@ public class UserService {
                 .orElseThrow( ()->new RuntimeException("user not found") );
         //delete
         userRepository.delete(exstingUser);
+    }
+
+    //allusers
+    public List<User> allUsers(){
+        List<User> users=new ArrayList<>();
+
+        userRepository.findAll().forEach(users::add);
+
+        return users;
     }
 }
