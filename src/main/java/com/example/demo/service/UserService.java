@@ -32,6 +32,7 @@ public class UserService {
         existingUser.setEmail(userPayLoad.getEmail());
         existingUser.setFirstName(userPayLoad.getFirstName());
         existingUser.setLastName(userPayLoad.getLastName());
+        existingUser.setPassword(userPayLoad.getPassword());
         existingUser.setPhoneNumber(userPayLoad.getPhoneNumber());
 
         existingUser.setRole(userPayLoad.getRole());    //ENUM
